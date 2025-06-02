@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Predefined credentials
+      const email = "user@example.com";
+      const username = "user123";
+      const correctPassword = "password123";
+
+      // Taking input
+      let input = prompt("Enter Email or Username:");
+      let password = prompt("Enter Password:");
+
+      // Checking login credentials
+      if (
+        (input === email || input === username) &&
+        password === correctPassword
+      ) {
+        console.log("Login Successful!");
+      } else {
+        console.log("Invalid Email/Username or Password!");
+      }
+    </script>
+  </body>
+</html>

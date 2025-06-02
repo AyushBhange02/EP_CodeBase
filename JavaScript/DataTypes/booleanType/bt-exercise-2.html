@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Password Validator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      .input-group {
+        margin: 15px 0;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        background-color: #af684c;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 10px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #result {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      .valid {
+        background-color: #dff0d8;
+        color: #3c763d;
+        border: 1px solid #d6e9c6;
+      }
+      .invalid {
+        background-color: #f2dede;
+        color: #a94442;
+        border: 1px solid #ebccd1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Password Validator</h1>
+
+    <div class="input-group">
+      <label for="password">Enter Password:</label>
+      <input type="password" id="password" placeholder="Type your password" />
+    </div>
+
+    <button onclick="validatePassword()">Validate Password</button>
+
+    <div id="result"></div>
+
+    <script>
+      function validatePassword() {
+        const password = document.getElementById("password").value;
+        //const resultDiv = document.getElementById("result");
+
+        //if (password !== "123456") {
+         // resultDiv.textContent = true;
+        //} else {
+         // resultDiv.textContent = false;
+        //}
+
+        document.getElementById("result").innerHTML = password == "123456";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #b0b0b0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        button {
+            background-color: #4c4faf;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #consoleOutput {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #333;
+            color: #0f0;
+            font-family: monospace;
+            border-radius: 4px;
+            text-align: left;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>String Operations</h1>
+        <p>Click the button to see string operations in the console</p>
+        <button onclick="analyzeString()">Analyze String</button>
+        <div id="consoleOutput"></div>
+    </div>
+
+    <script>
+        function analyzeString() {
+            // Create the phrase variable
+            const phrase = "JavaScript is awesome!";
+            
+            // Get string length
+            const phraseLength = phrase.length;
+            
+            // Get uppercase version
+            const uppercasePhrase = phrase.toUpperCase();
+            
+            // Print to browser console
+            console.log("Original phrase:", phrase);
+            console.log("Length:", phraseLength);
+            console.log("Uppercase version:", uppercasePhrase);
+            
+            // Also display in the UI
+            const consoleOutput = document.getElementById('consoleOutput');
+            consoleOutput.innerHTML = `
+                > Original phrase: ${phrase}<br>
+                > Length: ${phraseLength}<br>
+                > Uppercase version: ${uppercasePhrase}
+            `;
+            consoleOutput.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Circle Area Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .input-group {
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9e9e9;
+            border-radius: 4px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            margin: 20px auto;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <h1>Circle Area Calculator</h1>
+    
+    <div class="circle"></div>
+    
+    <div class="input-group">
+        <label for="radius">Radius:</label>
+        <input type="number" id="radius" placeholder="Enter radius of the circle">
+    </div>
+    
+    <button onclick="calculateArea()">Calculate Area</button>
+    
+    <div id="result"></div>
+
+    <script>
+        function calculateArea() {
+            // Get the radius value
+            const radius = Number(document.getElementById('radius').value);
+            
+            // Calculate area (πr²)
+            const area = radius * radius * radius;
+            
+            // Display the result
+            document.getElementById('result').textContent = `The area of the circle is: ${area.toFixed(2)} units squared.`;
+        }
+    </script>
+</body>
+</html>

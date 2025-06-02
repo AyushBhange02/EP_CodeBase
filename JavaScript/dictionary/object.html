@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript - Object or Map</title>
+  </head>
+  <body>
+    <script>
+      let student = { name: "Alice", age: 20 };
+      alert(student["name"]); // Access
+      console.log("name");
+
+      student.age = 21; // Update
+      student.grade = "A"; // Add
+      delete student.name; // Delete
+
+      for (let key in student) {
+        alert(key, student[key]);
+        console.log(key, student[key]);
+      }
+    </script>
+
+    <!-- <script>
+      const person = { name: "John", age: 30 };
+
+      const car = { make: "Ford", model: "Mustang" };
+    </script> -->
+
+    <script>
+      const obj = new Object();
+
+      person.name;
+
+      person["age"];
+
+      let key = "name";
+      person[key];
+
+      person.city = "London";
+
+      person.age = 31;
+
+      delete person.city;
+
+      Object.keys(person); // ["name", "age"]
+      Object.getOwnPropertyNames(person); // ["name", "age", ...]
+
+      
+    </script>
+    <!-- <script>
+
+      const obj = Object.create(protoObj);
+
+    </script> -->
+  </body>
+</html>

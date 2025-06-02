@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Type Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #a74caf;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: 4px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .type {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .value {
+            color: #2980b9;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Type Detector</h1>
+        
+        <div class="input-group">
+            <label for="userInput">Enter anything:</label>
+            <input type="text" id="userInput" placeholder="Type a number, string, boolean...">
+        </div>
+        
+        <button onclick="checkDataType()">Check Data Type</button>
+        
+        <div id="result">
+            The data type will appear here...
+        </div>
+    </div>
+
+    <script>
+        function checkDataType() {
+            // Get user input
+            const input = document.getElementById('userInput').value;
+            const resultDiv = document.getElementById('result');
+          
+            let value = input;
+            let type;
+          
+            type = typeof value;
+          
+            // Display the result
+            resultDiv.innerHTML = "Input: " + input +
+                                  "<br>Type: " + type;
+          
+            // Also log to console
+            console.log("Input:", input);
+            console.log("Type:", type);
+          }
+    </script>
+</body>
+</html>

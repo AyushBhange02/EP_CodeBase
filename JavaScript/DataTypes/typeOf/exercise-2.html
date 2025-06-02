@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Types Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #c9c9c9;
+      }
+      .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      button {
+        background-color: #af4c4c;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        display: block;
+        margin: 20px auto;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #output {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #c9d0d6;
+        border-radius: 5px;
+        font-family: monospace;
+        white-space: pre;
+      }
+      .type {
+        color: #e74c3c;
+        font-weight: bold;
+      }
+      .value {
+        color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>JavaScript Data Types</h1>
+      <button onclick="showDataTypes()">Show Data Types</button>
+      <div id="output">Click the button to see different data types...</div>
+    </div>
+
+    <script>
+      function showDataTypes() {
+        // Create variables of different types
+        const numberVar = 42;
+        const booleanVar = true;
+        const stringVar = "Hello World";
+        const objectVar = { name: "John", age: 30 };
+        const arrayVar = [1, 2, 3];
+        const nullVar = null;
+        const undefinedVar = undefined;
+        const functionVar = function () {
+          return "I'm a function";
+        };
+
+        // Prepare output
+        let outputText = "DATA TYPE EXAMPLES:\n\n";
+
+        function addToOutput(name, value, type) {
+          outputText += "Variable: " + name + "\n";
+          outputText += "Value: " + value + "\n";
+          outputText += "Type: " + type + "\n\n";
+        }
+
+        // Add each variable to output
+        addToOutput("Number", numberVar, typeof numberVar);
+        addToOutput("Boolean", booleanVar, typeof booleanVar);
+        addToOutput("String", stringVar, typeof stringVar);
+        addToOutput("Object", objectVar, typeof objectVar);
+        addToOutput("Array", arrayVar, typeof arrayVar);
+        addToOutput("Null", nullVar, typeof nullVar);
+        addToOutput("Undefined", undefinedVar, typeof undefinedVar);
+        addToOutput("Function", functionVar, typeof functionVar);
+
+        // Display in the webpage
+        document.getElementById("output").innerHTML = outputText;
+
+        // Also log to console
+        console.log("JavaScript Data Types");
+        console.log("Number:", numberVar, "| Type:", typeof numberVar);
+        console.log("Boolean:", booleanVar, "| Type:", typeof booleanVar);
+        console.log("String:", stringVar, "| Type:", typeof stringVar);
+        console.log("Object:", objectVar, "| Type:", typeof objectVar);
+        console.log("Array:", arrayVar, "| Type:", typeof arrayVar);
+        console.log("Null:", nullVar, "| Type:", typeof nullVar);
+        console.log("Undefined:", undefinedVar, "| Type:", typeof undefinedVar);
+        console.log("Function:", functionVar, "| Type:", typeof functionVar);
+      }
+    </script>
+  </body>
+</html>
