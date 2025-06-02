@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Photo Gallery</title>
+    <style>
+      /* Grid Container */
+      .gallery {
+        display: grid;
+        gap: 10px; /* Space between images */
+        padding: 20px;
+        background-color: #f0f0f0; /* Light gray background */
+      }
+
+      /* Grid Items (Images) */
+      .gallery img {
+        width: 100%; /* Ensure images fill their containers */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      }
+
+      /* Responsive Layout */
+      @media (min-width: 1024px) {
+        .gallery {
+          grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+        }
+      }
+
+      @media (max-width: 1023px) and (min-width: 768px) {
+        .gallery {
+          grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+        }
+      }
+
+      @media (max-width: 767px) {
+        .gallery {
+          grid-template-columns: 1fr; /* 1 column on mobile */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Photo Gallery</h1>
+
+    <!-- Photo Gallery -->
+    <div class="gallery">
+      <img
+        src="https://static.vecteezy.com/system/resources/thumbnails/049/855/347/small_2x/nature-background-high-resolution-wallpaper-for-a-serene-and-stunning-view-photo.jpg"
+        alt="Photo 1"
+      />
+      <img
+        src="https://static.vecteezy.com/system/resources/thumbnails/049/855/277/small/nature-background-high-resolution-wallpaper-for-a-serene-and-stunning-view-photo.jpg"
+        alt="Photo 2"
+      />
+      <img
+        src="https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg"
+        alt="Photo 3"
+      />
+      <img
+        src="https://t3.ftcdn.net/jpg/02/70/35/00/360_F_270350073_WO6yQAdptEnAhYKM5GuA9035wbRnVJSr.jpg"
+        alt="Photo 4"
+      />
+      <img
+        src="https://media.istockphoto.com/id/1430945266/video/nature-sunrise-mountain-trees-and-aerial-view-of-the-forrest-and-beautiful-scenic-in-the.jpg?s=640x640&k=20&c=6lKkV0GECR8l5Sa3Z6YzaoGKXzky9OZCr0PNQttYFa8="
+        alt="Photo 5"
+      />
+      <img
+        src="https://cdn.nimbusthemes.com/2017/09/09233338/Free-Nature-Backgrounds-Sunset-by-Pixabay.jpg"
+        alt="Photo 6"
+      />
+      <img
+        src="https://static.vecteezy.com/system/resources/thumbnails/037/291/343/small_2x/ai-generated-rays-of-sunlight-piercing-through-dense-clouds-casting-an-ethereal-glow-on-a-serene-meadow-photo.jpg"
+        alt="Photo 7"
+      />
+      <img
+        src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_640.jpg"
+        alt="Photo 8"
+      />
+      <img
+        src="https://img.goodfon.com/wallpaper/big/5/66/nature-road-roads-tree.webp"
+        alt="Photo 9"
+      />
+    </div>
+  </body>
+</html>

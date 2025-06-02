@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Product Grid</title>
+    <style>
+      /* Grid Container */
+      .product-grid {
+        display: grid;
+        gap: 20px; /* Space between products */
+        padding: 20px;
+        background-color: #f0f0f0; /* Light gray background */
+      }
+
+      /* Grid Items (Products) */
+      .product {
+        background-color: white; /* White background */
+        padding: 20px;
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        text-align: center;
+      }
+
+      .product img {
+        max-width: 100%; /* Ensure images fit within the product box */
+        border-radius: 10px; /* Rounded corners for images */
+      }
+
+      .product h3 {
+        margin: 10px 0;
+        font-size: 1.2rem;
+        color: #333; /* Dark text */
+      }
+
+      .product p {
+        font-size: 1rem;
+        color: #777; /* Light gray text */
+      }
+
+      /* Responsive Grid Layout */
+      @media (min-width: 1200px) {
+        .product-grid {
+          grid-template-columns: repeat(
+            5,
+            1fr
+          ); /* 4 columns on large screens */
+        }
+      }
+
+      @media (max-width: 1199px) and (min-width: 768px) {
+        .product-grid {
+          grid-template-columns: repeat(
+            3,
+            1fr
+          ); /* 3 columns on medium screens */
+        }
+      }
+
+      @media (max-width: 767px) {
+        .product-grid {
+          grid-template-columns: repeat(
+            2,
+            1fr
+          ); /* 2 columns on small screens */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .product-grid {
+          grid-template-columns: 1fr; /* 1 column on extra small screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Product Grid</h1>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product">
+        <img
+          src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSeSD-qTmPzOMN_Djlsf9TOZmPGBQp3by0BP6ghIjfXyCINmI7xBWrdn8q-_CUNxTc9ZrTrS4nww_OkxZx-Vs8t5jKg3WpHXNjH5-54ZcHJo-29Fxs_vLzh"
+          alt="Product 1"
+        />
+        <h3>Product name</h3>
+        <p>$19.99</p>
+        <h4>Add product spec.</h4>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRgdobeuuCEtQDKwxFOs9zv2A8hpDA_ppoC-JGwOE0JPkL1Cq8bDHjV8XuMcLUb65eTQHNLcqCSvYtDZh-bCrXn_H8-UZPl4IREjrUtt1AvqW74cNi3d4j9Nw"
+          alt="Product 2"
+        />
+        <h3>Product name</h3>
+        <p>$29.99</p>
+        <h4>Add product spec.</h4>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRNMgMh1doXjntXubuwavyrPIFz7KfWaf843bbZBPJZu5MZJJh688u9p5efxXivLU9m_HCZj3ijwnNrHJ0qdrIH2TumGFfvf1qlbTYMXb9A8LYMmcGvmqSBUA"
+          alt="Product 3"
+        />
+        <h3>Product name</h3>
+        <p>$39.99</p>
+        <h4>Add product spec.</h4>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product">
+        <img
+          src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQCSjnHnfVzId5QnjixaKooJlhDTCUYInKrdwY2A-s1Lvq-z5zFaVY7tTZmipahjrFp3T6zTYsqvNgfDI4CNpALqc9Ae6i3pTvIOGpWzKiAz2guoJulwmKb"
+          alt="Product 4"
+        />
+        <h3>Product name</h3>
+        <p>$49.99</p>
+        <h4>Add product spec.</h4>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product">
+        <img
+          src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRWn2fWcjez1izLlDdxpzbsyiu3bOghJA_fK3i6Dj28BFQx0XZu87jnfAu3IiHVgP28Ya7Vg9ZMPBnp21JA-8K6KT5qGgDTZJIFHxkHust36k403UuXeDfJ"
+          alt="Product 5"
+        />
+        <h3>Product name</h3>
+        <p>$59.99</p>
+        <h4>Add product spec.</h4>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product">
+        <img
+          src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQO_g9ZnpUqQs0DhoAo0dc0COO1QbJd0DtAmsZgpYSBhf8pw5E7kHSeULdyjDe03MI5qlkWZwXvyDWAl3j6zN6G5KHzIbFVgQt-np3XDAXpGi5b9lpHkeK6sg"
+          alt="Product 6"
+        />
+        <h3>Product name</h3>
+        <p>$69.99</p>
+        <h4>Add product spec.</h4>
+      </div>
+    </div>
+  </body>
+</html>

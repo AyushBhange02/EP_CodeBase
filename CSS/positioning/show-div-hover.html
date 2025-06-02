@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Magic Box Trick</title>
+  <style>
+    .magic-area {
+      display: inline-block;
+      position: relative;
+      margin: 50px;
+    }
+
+    .magic-box {
+      display: none;
+      width: 500px;
+      height: 500px;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      transition: opacity 0.3s;
+    }
+
+    .magic-area:hover .magic-box {
+      display: block;
+    }
+
+    .magic-button {
+      padding: 12px 24px;
+      background: #222;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+
+    .magic-button:hover {
+      background: #444;
+    }
+    span{
+      color: #fff;
+      font-size: 40px;
+      font-weight: 700;
+    }
+    .magic-box-two{
+      width: 70%;
+      height: 70%;
+      background-color: #fff;
+      position: absolute;
+      margin-left: 20px;
+      margin-top: 20px;
+      display: none;
+    }
+
+    span:hover+ .magic-box-two{
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="magic-area">
+    <div class="magic-button">Hover to Reveal the Magic Box!</div>
+    <div class="magic-box">
+      <h1>Magic Box One</h1>
+     <span>Hover to Reveal the Magic Box two!</span>
+    <div class="magic-box-two"></div>
+    </div>
+  </div>
+</body>
+</html>

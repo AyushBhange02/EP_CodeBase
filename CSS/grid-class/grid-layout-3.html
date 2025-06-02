@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4x4 Puzzle Grid</title>
+    <style>
+      /* Grid Container */
+      .puzzle-grid {
+        display: grid;
+        grid-template-columns: repeat(
+          4,
+          1fr
+        ); /* 4 columns using fractional units */
+        grid-template-rows: repeat(
+          4,
+          100px
+        ); /* 4 rows using fixed pixel height */
+        gap: 10px; /* Space between grid items */
+        width: 80%; /* 80% of the parent container's width */
+        margin: 20px auto; /* Center the grid */
+      }
+
+      /* Grid Items (Puzzle Pieces) */
+      .puzzle-piece {
+        background-color: #4caf50; /* Green background */
+        border-radius: 10px; /* Rounded corners */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        color: white; /* White text */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      }
+
+      /* Responsive Layout */
+      @media (max-width: 768px) {
+        .puzzle-grid {
+          grid-template-columns: repeat(
+            4,
+            25%
+          ); /* 4 columns using percentage units */
+          grid-template-rows: repeat(
+            4,
+            80px
+          ); /* Smaller fixed height for smaller screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>4x4 Puzzle Grid</h1>
+
+    <!-- Puzzle Grid -->
+    <div class="puzzle-grid">
+      <div class="puzzle-piece">1</div>
+      <div class="puzzle-piece">2</div>
+      <div class="puzzle-piece">3</div>
+      <div class="puzzle-piece">4</div>
+      <div class="puzzle-piece">5</div>
+      <div class="puzzle-piece">6</div>
+      <div class="puzzle-piece">7</div>
+      <div class="puzzle-piece">8</div>
+      <div class="puzzle-piece">9</div>
+      <div class="puzzle-piece">10</div>
+      <div class="puzzle-piece">11</div>
+      <div class="puzzle-piece">12</div>
+      <div class="puzzle-piece">13</div>
+      <div class="puzzle-piece">14</div>
+      <div class="puzzle-piece">15</div>
+      <div class="puzzle-piece">16</div>
+    </div>
+  </body>
+</html>

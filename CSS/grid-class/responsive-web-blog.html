@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Blog Layout</title>
+  <style>
+    /* Basic Reset */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Grid Container */
+    .blog-layout {
+      display: grid;
+      gap: 20px; /* Space between sidebar and content */
+      padding: 20px;
+      background-color: #f0f0f0; /* Light gray background */
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background-color: #4c70af; /* Green background */
+      color: white; /* White text */
+      padding: 20px;
+      border-radius: 10px; /* Rounded corners */
+    }
+
+    /* Content */
+    .content {
+      background-color: white; /* White background */
+      padding: 20px;
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    /* Responsive Layout */
+    @media (min-width: 768px) {
+      .blog-layout {
+        grid-template-columns: 200px 1fr; /* Sidebar: 200px, Content: 1fr */
+      }
+    }
+
+    @media (max-width: 767px) {
+      .blog-layout {
+        grid-template-columns: 1fr; /* Full-width content on mobile */
+      }
+
+      .sidebar {
+        order: 2; /* Move sidebar below content on mobile */
+      }
+
+      .content {
+        order: 1; /* Move content above sidebar on mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Blog Layout -->
+  <div class="blog-layout">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Sidebar</h2>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+      </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <h1>Blog Post Title</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+</body>
+</html>
