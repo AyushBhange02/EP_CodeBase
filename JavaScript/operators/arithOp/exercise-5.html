@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Treasure Chest Game</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f5e8c7 0%, #d6ba7a 100%);
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .game-container {
+      background: #fffbe6;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      padding: 40px 30px 30px 30px;
+      text-align: center;
+      max-width: 350px;
+      width: 100%;
+      position: relative;
+    }
+    .chest-img {
+      width: 120px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+    }
+    .coin-count {
+      font-size: 2.5em;
+      color: #e8b200;
+      font-weight: bold;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px #fff6b2, 0 1px 0 #cfa800;
+    }
+    .label {
+      font-size: 1.1em;
+      color: #8b6f1e;
+      margin-bottom: 15px;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .game-btn {
+      background: linear-gradient(90deg, #ffe066 0%, #ffd700 100%);
+      border: 2px solid #bfa100;
+      border-radius: 10px;
+      padding: 14px 28px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #7c5c00;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .game-btn:active {
+      background: linear-gradient(90deg, #ffd700 0%, #ffe066 100%);
+      transform: scale(0.97);
+    }
+    .history {
+      margin-top: 30px;
+      background: #fff8d1;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 1em;
+      color: #a98c2b;
+      min-height: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <img src="https://toppng.com/uploads/preview/treasure-chest-png-download-png-image-with-transparent-pirate-treasure-transparent-11562936507vubrm4tna3.png" alt="Treasure Chest" class="chest-img">
+    <div class="label">Gold Coins in Chest</div>
+    <div id="coinCount" class="coin-count">0</div>
+    <div class="btn-group">
+      <button class="game-btn" onclick="addCoins()">+ Add</button>
+      <button class="game-btn" onclick="subtractCoins()">- Subtract</button>
+    </div>
+    <div class="history" id="history"></div>
+  </div>
+  <script>
+    let coins = 0;
+    let history = [];
+
+    function updateUI() {
+      document.getElementById('coinCount').innerHTML = coins;
+      document.getElementById('history').innerHTML = history.slice(-3).reverse().join('<br>');
+    }
+
+    function addCoins() {
+      let amount = prompt("How many coins do you want to add?", "1");
+      amount = Number(amount, 10);
+      coins += amount;
+      history.push(`🟡 Added ${amount} coin${amount > 1 ? 's' : ''}.`);
+      updateUI();
+    }
+
+    function subtractCoins() {
+      let amount = prompt("How many coins do you want to subtract?", "1");
+      amount = Number(amount, 10);
+      if (isNaN(amount) || amount <= 0) {
+        alert("Please enter a positive number.");
+        return;
+      }
+      if (amount > coins) {
+        alert("Not enough coins in the chest!");
+        return;
+      }
+      coins -= amount;
+      history.push(`⚪️ Subtracted ${amount} coin${amount > 1 ? 's' : ''}.`);
+      updateUI();
+    }
+
+    // Initialize UI
+    updateUI();
+  </script>
+</body>
+</html>

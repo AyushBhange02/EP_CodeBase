@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exponentiation Operator Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #c4c4c4;
+      }
+      .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      .math-operation {
+        margin: 20px 0;
+        padding: 15px;
+        background-color: #c5ccd2;
+        border-radius: 5px;
+        font-family: monospace;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        width: 100%;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #result {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #bfcac0;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      .highlight {
+        color: #e74c3c;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Exponentiation Operator (**=)</h1>
+
+      <div class="math-operation">
+        <p>Initial value: let x = 2</p>
+        <p>Operation: x **= 3 (x = x ** 3)</p>
+      </div>
+
+      <button onclick="calculatePower()">Calculate x<sup>3</sup></button>
+
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function calculatePower() {
+        // Initialize x
+        let x = 2;
+
+        // Display initial value
+        const initialValue = x;
+
+        // Apply exponentiation using **= operator
+        x **= 3; // Equivalent to: x = x ** 3
+
+        // Display result
+        document.getElementById("result").innerHTML = `
+                <p>Initial value: x = ${initialValue}</p>
+                <p>After x **= 3: <span class="highlight">x = ${x}</span></p>
+                <p>Mathematically: 2<sup>3</sup> = 8</p>
+            `;
+
+        // Console output
+        console.log(`Initial value: x = ${initialValue}`);
+        console.log(`After x **= 3: x = ${x}`);
+        console.log(`Calculation: 2^3 = ${x}`);
+
+      }
+    </script>
+
+   
+  </body>
+</html> 

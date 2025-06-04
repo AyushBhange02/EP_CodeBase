@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum and Difference Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #959595;
+        }
+        .calculator {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4e4caf;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #results {
+            margin-top: 30px;
+        }
+        .result {
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: #ccd4db;
+            border-left: 4px solid #4CAF50;
+            border-radius: 4px;
+        }
+        .operation {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Sum and Difference Calculator</h1>
+        
+        <div class="input-group">
+            <label for="num1">First Number:</label>
+            <input type="number" id="num1" placeholder="Enter first number">
+        </div>
+        
+        <div class="input-group">
+            <label for="num2">Second Number:</label>
+            <input type="number" id="num2" placeholder="Enter second number">
+        </div>
+        
+        <button onclick="calculate()">Calculate</button>
+        
+        <div id="results">
+            <!-- Results will appear here -->
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            // Get input values
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const resultsDiv = document.getElementById('results');
+            
+            // Clear previous results
+            resultsDiv.innerHTML = '';
+            
+            // Calculate sum and difference
+            const sum = num1 + num2;
+            const difference = num1 - num2;
+            
+            // Create result elements
+            const sumResult = document.createElement('div');
+            sumResult.className = 'result';
+            sumResult.innerHTML = `
+                <span class="operation">Sum:</span> ${num1} + ${num2} = ${sum}
+            `;
+            
+            const diffResult = document.createElement('div');
+            diffResult.className = 'result';
+            diffResult.innerHTML = `
+                <span class="operation">Difference:</span> ${num1} - ${num2} = ${difference}
+            `;
+            
+            // Add results to the page
+            resultsDiv.appendChild(sumResult);
+            resultsDiv.appendChild(diffResult);
+            
+            // Also log to console
+            console.log(`Sum: ${num1} + ${num2} = ${sum}`);
+            console.log(`Difference: ${num1} - ${num2} = ${difference}`);
+        }
+    </script>
+</body>
+</html>

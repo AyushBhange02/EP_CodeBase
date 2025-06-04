@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplication Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f4f4f4;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 350px;
+      margin: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input[type="number"] {
+      width: 70%;
+      padding: 6px;
+      font-size: 1em;
+      margin: 10px 0;
+    }
+    button {
+      padding: 8px 18px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      background: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Multiplication Quiz</h2>
+    <div id="question"></div>
+    <input type="number" id="answer" placeholder="Your answer">
+    <br>
+    <button onclick="checkAnswer()">Check Answer</button>
+    <div class="result" id="result"></div>
+    <button onclick="generateQuestion()" style="margin-top:15px;">New Question</button>
+  </div>
+
+  <script>
+    let num1, num2;
+
+    function generateQuestion() {
+      num1 = Math.floor(Math.random() * 100) + 1;
+      num2 = Math.floor(Math.random() * 100) + 1;
+      document.getElementById('question').innerHTML ="What is " + num1 + " * " + num2 + "?";
+      document.getElementById('answer').value = '';
+      document.getElementById('result').innerHTML = '';
+      document.getElementById('answer').focus();
+    }
+
+    function checkAnswer() {
+      const userAnswer = parseInt(document.getElementById('answer').value, 10);
+      const correctAnswer = num1 * num2;
+      if (userAnswer === correctAnswer) {
+        document.getElementById('result').innerHTML = "✅ Correct!";
+        document.getElementById('result').style.color = 'green';
+      } else {
+        document.getElementById('result').innerHTML ="❌ Incorrect. The correct answer is " + correctAnswer;
+        document.getElementById('result').style.color = 'red';
+      }
+    }
+
+    // Generate the first question on page load
+    window.onload = generateQuestion;
+  </script>
+</body>
+</html>

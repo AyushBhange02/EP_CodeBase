@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salary Deduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #a4f6e2;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .salary-info {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e3c6ff;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4c90af;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #c9abab;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .highlight {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Salary Deduction</h1>
+        
+        <div class="salary-info">
+            <p>Original Salary: ₹<span id="originalSalary">5000</span></p>
+            <p>Deduction Amount: ₹<span id="deductionAmount">500</span></p>
+        </div>
+        
+        <button onclick="deductSalary()">Apply Deduction</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function deductSalary() {
+            // Initialize salary
+            let salary = 5000;
+            const deduction = 500;
+            
+            // Display original values
+            document.getElementById('originalSalary').innerHTML = salary;
+            document.getElementById('deductionAmount').innerHTML = deduction;
+            
+            // Apply deduction using -= operator
+            salary -= deduction; // Equivalent to: salary = salary - deduction
+            
+            // Display result
+            document.getElementById('result').innerHTML = "Salary after deduction: ₹<span class='highlight'>" + salary + "</span>";
+            
+            // Console output
+            console.log(`Original salary: ₹5000`);
+            console.log(`Deduction amount: ₹500`);
+            console.log(`Salary after deduction: ₹${salary}`);
+        }
+    </script>
+</body>
+</html>

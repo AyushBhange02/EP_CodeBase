@@ -8,7 +8,7 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
+            background-color: #e5e5e5;
         }
         .container {
             background-color: white;
@@ -38,7 +38,7 @@
         #output {
             margin-top: 30px;
             padding: 20px;
-            background-color: #f0f8ff;
+            background-color: #bcbcbc;
             border-radius: 5px;
             font-family: monospace;
             white-space: pre-wrap;
@@ -66,20 +66,21 @@
             let outputText = "";
             
             // 1. var behavior
-            outputText += "1. var VARIABLE:\n";
+          
             var varVariable = "I'm a var";
-            document.getElementById
+            outputText += "1. var VARIABLE:\n" + varVariable + "\n";
 
             
             // 2. let behavior
-            outputText += "2. let VARIABLE:\n";
+           
             let letVariable = "I'm a let";
+            outputText += "2. let VARIABLE:\n" + letVariable + "\n";
            
             
             // 3. const behavior
-            outputText += "3. const VARIABLE:\n";
+           
             const constVariable = "I'm a const";
-            
+            outputText += "3. const VARIABLE:\n" + constVariable + "\n";
             
             // Display the results
             document.getElementById('output').innerHTML = outputText;
@@ -98,38 +99,18 @@
             console.groupEnd();
             
             // let
-            console.group("let behavior");
+           
             let consoleLet = "Initial let";
             console.log("Initial:", consoleLet);
             consoleLet = "Reassigned let";
             console.log("Reassigned:", consoleLet);
-            try {
-                let consoleLet = "Attempt redeclare";
-                console.log("In new scope:", consoleLet);
-            } catch (e) {
-                console.error("Redeclaration error:", e.message);
-            }
-            console.groupEnd();
+           
             
             // const
-            console.group("const behavior");
+          
             const consoleConst = "Initial const";
             console.log("Initial:", consoleConst);
-            try {
-                consoleConst = "Attempt reassign";
-                console.log("After reassignment attempt:", consoleConst);
-            } catch (e) {
-                console.error("Reassignment error:", e.message);
-            }
-            try {
-                const consoleConst = "Attempt redeclare";
-                console.log("In new scope:", consoleConst);
-            } catch (e) {
-                console.error("Redeclaration error:", e.message);
-            }
-            console.groupEnd();
-            
-            console.groupEnd();
+           
         }
     </script>
 </body>

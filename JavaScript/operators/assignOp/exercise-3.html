@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Discount Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #9f9f9f;
+      }
+      .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .product-info {
+        margin: 20px 0;
+        padding: 15px;
+        background-color: #b9cedf;
+        border-radius: 5px;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        width: 100%;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #result {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #8cb38f;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      .original {
+        text-decoration: line-through;
+        color: #777;
+      }
+      .discounted {
+        color: #e74c3c;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Product Discount Application</h1>
+
+      <div class="product-info">
+        <p>Original Price: ₹<span id="originalPrice">2000</span></p>
+        <p>Discount: <span id="discountPercentage">50</span>%</p>
+      </div>
+
+      <button onclick="applyDiscount()">Apply 50% Discount</button>
+
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function applyDiscount() {
+        // Initialize product price
+        let price = 2000;
+        const discount = 50; // 50%
+
+        // Display original values
+        document.getElementById("originalPrice").innerHTML = price;
+        document.getElementById("discountPercentage").innerHTML = discount;
+
+        // Apply discount using /= operator
+        price /= 2; // Equivalent to: price = price / 2 (for 50% discount)
+        // Alternatively could do: price *= 0.5;
+
+        // Display result
+        document.getElementById("result").innerHTML =
+          "Discounted price: ₹<span class='discounted'>" +
+          price.toFixed(2) +
+          "</span> <span class='original'>₹" +
+          (price * 2).toFixed(2) +
+          "</span>";
+
+        // Console output
+        console.log(`Original price: ₹2000`);
+        console.log(`Discount applied: 50%`);
+        console.log(`Discounted price: ₹${price.toFixed(2)}`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Budget Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 40px;
+    }
+    input {
+      padding: 8px;
+      width: 200px;
+      margin: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Budget Calculator</h2>
+  <p>Enter your income and expenses to learn how addition, subtraction, and division help in budgeting.</p>
+
+  <input type="number" id="income" placeholder="Total Income"><br>
+  <input type="number" id="rent" placeholder="Rent"><br>
+  <input type="number" id="food" placeholder="Food"><br>
+  <input type="number" id="other" placeholder="Other Expenses"><br>
+
+  <button onclick="calculateBudget()">Calculate</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateBudget() {
+      const income = Number(document.getElementById('income').value);
+      const rent = Number(document.getElementById('rent').value);
+      const food = Number(document.getElementById('food').value);
+      const other = Number(document.getElementById('other').value);
+
+      const totalExpenses = rent + food + other;             // Addition
+      const savings = income - totalExpenses;                // Subtraction
+      const dailyBudget = savings / 30;                      // Division
+
+      let message = "";
+      message += "💰 Total Expenses (Addition): ₹" + totalExpenses + "<br>";
+      message += "💰 Savings (Subtraction): ₹" + savings + "<br>";
+      message += "💰 Daily Budget (Division): ₹" + dailyBudget.toFixed(2);
+
+      document.getElementById('result').innerHTML = message;
+    }
+  </script>
+
+</body>
+</html>
